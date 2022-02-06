@@ -6,11 +6,13 @@ import java.util.Scanner;
 
 
 public class App {
+    public static Scanner user = new Scanner(System.in);
+    static public static Board b = new Board();
 
     /****************************************************************** 
      * 
      ******************************************************************/
-    public static boolean GameOver(Board b, int turn)
+    public static boolean GameOver(int turn)
     {
         String[] board = new String[9];
         board = b.GetBoard();
@@ -75,7 +77,7 @@ public class App {
     /****************************************************************** 
      * 
      ******************************************************************/
-    public static int PlayerTurns(Board b, int turn)
+    public static int PlayerTurns(int turn)
     {
         Scanner user = new Scanner(System.in);
         String slot;
@@ -96,9 +98,7 @@ public class App {
             // "O";
         }
         turn++;
-        user.close();
         return turn;
-        
     }
 
     /****************************************************************** 
@@ -106,17 +106,15 @@ public class App {
      ******************************************************************/
     public static void main(String[] args) throws Exception {
 
-        Board b = new Board();
-
         b.DisplayBoard();
         boolean end = false;
         int turn = 1;
 
         while (!end)
         {
-            turn = PlayerTurns(b, turn);
+            turn = PlayerTurns(turn);
             b.DisplayBoard();
-            end = GameOver(b, turn);
+            end = GameOver(turn);
         }
         System.out.println("Good game. Thanks for playing!");
     }

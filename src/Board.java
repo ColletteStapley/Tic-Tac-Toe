@@ -45,7 +45,7 @@ public class Board {
     /**********************************************************************
      * Changes the desired slot in the board to the desired symbol
      **********************************************************************/
-    public void UpdateSpot(Integer spot, String ticTac) { board[spot + 1] = ticTac; }
+    public void UpdateSpot(Integer spot, String ticTac) { board[spot - 1] = ticTac; }
     
     /**********************************************************************
      * Save the board to the desired txt file
