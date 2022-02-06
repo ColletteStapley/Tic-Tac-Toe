@@ -10,22 +10,25 @@ public class App {
     /****************************************************************** 
      * 
      ******************************************************************/
-    public static boolean GameOver(char[] board, int turn)
+    public static boolean GameOver(Board b, int turn)
     {
-        char player;
+        String[] board = new String[9];
+        board = b.GetBoard();
+
+        String player;
 
         if ((turn % 2 ) == 0)
         {
-            player = 'X';
+            player = "X";
         }
         else if ((turn % 2) == 1)
         {
-            player = 'O';
+            player = "O";
         }
         else
         {
             System.out.println("Somethings wrong here?");
-            player = '?';
+            player = "?";
         }
 
         for (int i = 0; i < 3; i++)
@@ -54,9 +57,9 @@ public class App {
 
         for (int i = 0; i < 9; i++)
         {
-            if (board[i] != 'X')
+            if (board[i] != "X")
             {
-                if (board[i] != '0')
+                if (board[i] != "O")
                 {
                     count++;
                 }
@@ -72,7 +75,7 @@ public class App {
     /****************************************************************** 
      * 
      ******************************************************************/
-    public static int PlayerTurns(char[] board, int turn)
+    public static int PlayerTurns(Board b, int turn)
     {
         Scanner user = new Scanner(System.in);
         String slot;
@@ -80,16 +83,22 @@ public class App {
         {
             System.out.print("X's turn to choose a square (1-9): ");
             slot = user.next();
+            int spot = Integer.parseInt(slot);
+            b.UpdateSpot(spot, "X");
             // "X";
         }
         else
         {
             System.out.print("O's turn to choose a square (1-9): ");
             slot = user.next();
+            int spot = Integer.parseInt(slot);
+            b.UpdateSpot(spot, "O");
             // "O";
         }
         turn++;
+        user.close();
         return turn;
+        
     }
 
     /****************************************************************** 
@@ -100,16 +109,14 @@ public class App {
         Board b = new Board();
 
         b.DisplayBoard();
-        char[] board = new char[9];
-        board = b.GetBoard();
         boolean end = false;
         int turn = 1;
 
         while (!end)
         {
-            turn = PlayerTurns(board, turn);
+            turn = PlayerTurns(b, turn);
             b.DisplayBoard();
-            end = GameOver(board, turn);
+            end = GameOver(b, turn);
         }
         System.out.println("Good game. Thanks for playing!");
     }

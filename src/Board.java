@@ -16,7 +16,6 @@ public class Board {
         for (int row = 0; row < 9; row++) {
             board[row] = String.valueOf(row + 1);
         }
-        
     }
 
     /**********************************************************************
@@ -30,28 +29,26 @@ public class Board {
      * 
      **********************************************************************/
     public void DisplayBoard() {
-        System.out.print(board[0]);
+        System.out.print(board[0] + " ");
         for (int i = 1; i <= 8; i++) {
             if (i == 3 || i == 6) {
                 System.out.print("\n");
                 System.out.println("-+-+-");
-                System.out.print(board[i]);
+                System.out.print(board[i] + " ");
             } else {
-                System.out.print(board[i]);
+                System.out.print(board[i] + " ");
             }
         }
         System.out.print("\n");
     }
 
     /**********************************************************************
-     * 
+     * Changes the desired slot in the board to the desired symbol
      **********************************************************************/
-    public void UpdateSpot(String spot, String ticTac) {
-        
-    }
+    public void UpdateSpot(Integer spot, String ticTac) { board[spot + 1] = ticTac; }
     
     /**********************************************************************
-     * 
+     * Save the board to the desired txt file
      **********************************************************************/
     public void SaveBoard(String fileName) {
         try {
@@ -68,7 +65,7 @@ public class Board {
     }
 
     /**********************************************************************
-     * 
+     * Create a new txt file
      **********************************************************************/
     public void CreateFile(String fileName) {
         try {
@@ -85,13 +82,13 @@ public class Board {
     }
 
     /**********************************************************************
-     * 
+     * Opens the desired file and pulls the data in the board
      **********************************************************************/
     public void OpenFile(String fileName) {
         String file = fileName + ".txt";
         try {
             FileWriter writer = new FileWriter(file); 
-            writer.write(board);
+            // writer.write(board);
             writer.flush();
             writer.close();
         } catch (IOException e) {
