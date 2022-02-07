@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class App {
     public static Scanner user = new Scanner(System.in);
-    static public static Board b = new Board();
+    public static Board b = new Board();
 
     /****************************************************************** 
      * 
