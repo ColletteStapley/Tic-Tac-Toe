@@ -12,7 +12,7 @@ public class App {
     /****************************************************************** 
      * 
      ******************************************************************/
-    public static boolean GameOver(int turn)
+    public static String GameOver(int turn)
     {
         String[] board = new String[9];
         board = b.GetBoard();
@@ -37,7 +37,7 @@ public class App {
         {
             if (board[i] == player && board[i + 3] == player && board[i + 6] == player)
             {
-                return true;
+                return player + " Wins! Thanks for Playing!";
             }
         }
 
@@ -45,14 +45,14 @@ public class App {
         {
             if (board[i] == player && board[i + 1] == player && board[i + 2] == player)
             {
-                return true;
+                return player + " Wins! Thanks for Playing!";
             }
         }
 
         if ((board[0] == player && board[4] == player && board[8] == player) ||
              board[2] == player && board[4] == player && board[6] == player)
              {
-                 return true;
+                return player + " Wins! Thanks for Playing!";
              }
 
         int count = 0;
@@ -69,9 +69,9 @@ public class App {
         }
         if (count == 0)
         {
-            return true;
+            return "Cats Cradle, IT'S A TIE! Thanks for Playing!";
         }
-        return false;
+        return "continue";
     }
 
     /****************************************************************** 
@@ -107,15 +107,16 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         b.DisplayBoard();
-        boolean end = false;
+        String end = "continue";
         int turn = 1;
 
-        while (!end)
+        while (end == "continue")
         {
             turn = PlayerTurns(turn);
             b.DisplayBoard();
             end = GameOver(turn);
         }
-        System.out.println("Good game. Thanks for playing!");
+        System.out.println(end);
+        // System.out.println("Good game. Thanks for playing!");
     }
 }
