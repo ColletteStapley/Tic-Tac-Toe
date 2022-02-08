@@ -16,11 +16,9 @@ I used VS Code and the Extension Pack for Java in VS Code
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
 * [Java T Point](https://www.javatpoint.com/)
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
 * Couldnt' quite get the file part to work. It's there and it exists, but certain things  my resources told me would help didn't actually work as expected. Plus there were so many solutions to look through.
 * I could probably improve the display as well.
