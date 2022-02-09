@@ -1,5 +1,5 @@
 /********************************************************************** 
- * Name: 
+ * Name: Collette Stapley
  **********************************************************************/
 
 import java.util.Scanner;
@@ -10,7 +10,7 @@ public class App {
     public static Board b = new Board();
 
     /****************************************************************** 
-     * 
+     * checks for winning/tie conditions
      ******************************************************************/
     public static String GameOver(int turn)
     {
