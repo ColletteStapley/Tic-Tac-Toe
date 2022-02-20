@@ -4,7 +4,6 @@
 
 import java.util.Scanner;
 
-
 public class App {
     public static Scanner user = new Scanner(System.in);
     public static Board b = new Board();
@@ -75,7 +74,7 @@ public class App {
     }
 
     /****************************************************************** 
-     * 
+     * Keeps Track of Who's Turn It is
      ******************************************************************/
     public static int PlayerTurns(int turn)
     {
@@ -98,14 +97,17 @@ public class App {
             // "O";
         }
         turn++;
+        System.out.println("");
         return turn;
     }
 
     /****************************************************************** 
-     * 
+     * Main function, holds the while loop for continues game play if 
+     * desired. Runs main game
      ******************************************************************/
     public static void main(String[] args) throws Exception {
-
+        
+        System.out.println("");
         b.DisplayBoard();
         String end = "continue";
         int turn = 1;

@@ -1,14 +1,10 @@
-/**********************************************************************
- * 
-**********************************************************************/
-
 import java.io.File;
 import java.io.FileWriter;   // Import the FileWriter class
 
 import java.io.IOException;  // Import the IOException class to handle errors
 
 /**********************************************************************
- * 
+ * This class is the Board object.
  *********************************************************************/
 public class Board {
     String[] board = new String[9];
@@ -19,14 +15,14 @@ public class Board {
     }
 
     /**********************************************************************
-     * 
+     * Returns the board list
      **********************************************************************/
     public String[] GetBoard() {
         return board;
     }
 
     /**********************************************************************
-     * 
+     * Displays the board
      **********************************************************************/
     public void DisplayBoard() {
         System.out.print(board[0] + " ");
@@ -40,6 +36,7 @@ public class Board {
             }
         }
         System.out.print("\n");
+        System.out.println("");
     }
 
     /**********************************************************************
