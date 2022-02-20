@@ -6,8 +6,6 @@ This program prompts the user for a number 1 through 9, each corresponding to a 
 
 This code was written as a means to better learn java through writing a code I have done in several other languages.
 
-LINK HERE
-
 [Software Demo Video](https://youtu.be/DCpCv_Infb4)
 
 # Development Environment
