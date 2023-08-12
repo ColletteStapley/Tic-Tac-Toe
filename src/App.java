@@ -96,6 +96,7 @@ public class App {
             b.UpdateSpot(spot, "O");
             // "O";
         }
+        user.close();
         turn++;
         System.out.println("");
         return turn;
